@@ -1,6 +1,6 @@
-import java.io.BufferedReader;
+package entity;
+
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 public class Player implements Playable {
 

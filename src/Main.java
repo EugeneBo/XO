@@ -1,3 +1,8 @@
+import entity.Ai;
+import entity.Game;
+import entity.Playable;
+import entity.Player;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -10,7 +15,7 @@ public class Main {
 
         try {
             System.out.println("\nChoose game type: ");
-            System.out.println("1 - Player vs Player | 2 - Player vs PC");
+            System.out.println("1 - entity.Player vs entity.Player | 2 - entity.Player vs PC");
 
             int gameType = Integer.parseInt(reader.readLine());
 

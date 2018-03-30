@@ -1,3 +1,5 @@
+package entity;
+
 import java.io.IOException;
 
 public class Ai implements Playable {

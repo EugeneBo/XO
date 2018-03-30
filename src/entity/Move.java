@@ -1,3 +1,5 @@
+package entity;
+
 public class Move {
 
     private int x;
