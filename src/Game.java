@@ -27,7 +27,7 @@ public class Game {
 
        field.showField();
 
-/
+
     }
 
 
