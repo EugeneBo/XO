@@ -4,10 +4,10 @@ public class Move {
 
     private int x;
     private int y;
-    private boolean moveType;
+    private int moveType;
 
 
-    public Move(int x, int y, boolean moveType) {
+    public Move(int x, int y, int moveType) {
         this.x = x;
         this.y = y;
         this.moveType = moveType;
@@ -29,11 +29,11 @@ public class Move {
         this.y = y;
     }
 
-    public boolean getMoveType() {
+    public int getMoveType() {
         return moveType;
     }
 
-    public void setMoveType(boolean moveType) {
+    public void setMoveType(int moveType) {
         this.moveType = moveType;
     }
 }
