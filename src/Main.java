@@ -20,13 +20,15 @@ public class Main {
             while (true) {
                 System.out.println("Choose type of your figure: ");
                 System.out.println("X | O");
-                String SMoveType = reader.readLine();
-                if (SMoveType.equals("X")) {
+
+                String sMoveType = reader.readLine();
+
+                if (sMoveType.equals("X")) {
                     Player1MoveType = 1;
                     Player2MoveType = -1;
                     break;
                 } else {
-                    if (SMoveType.equals("O")) {
+                    if (sMoveType.equals("O")) {
                         Player1MoveType = -1;
                         Player2MoveType = 1;
                         break;
@@ -41,23 +43,22 @@ public class Main {
             System.out.println("Enter Player2 name: ");
             String player2Name = reader.readLine();
 
-            System.out.println("Enter field size:");
-            int fieldSize = Integer.parseInt(reader.readLine());
+//            System.out.println("Enter field size:"); //todo for future realization
+//            int fieldSize = Integer.parseInt(reader.readLine());
 
             Game game;
 
             if (gameType == 1) {
-                game = new Game(new Player(player1Name,Player1MoveType),
-                                new Player(player2Name,Player2MoveType),
-                                fieldSize);
+                game = new Game(new Player(player1Name, Player1MoveType),
+                        new Player(player2Name, Player2MoveType),
+                        3);
             } else {
-                game = new Game(new Player(player1Name,Player1MoveType),
-                                new PlayerAi(player2Name,Player2MoveType),
-                                fieldSize);
+                game = new Game(new Player(player1Name, Player1MoveType),
+                        new PlayerAi(player2Name, Player2MoveType),
+                        3);
             }
 
             game.startGame();
-
 
         } catch (IOException e) {
             e.printStackTrace();

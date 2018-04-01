@@ -1,12 +1,8 @@
 package entity;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 public class Game {
-
-    final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
     private Playable player1;
     private Playable player2;
@@ -18,38 +14,40 @@ public class Game {
         this.player2 = player2;
     }
 
-
-    public void startGame() throws IOException {
-        field.showField();
+    public void startGame() throws IOException { //todo handle IOException
         final Playable winner;
+        Move player1Move;
+        Move player2Move;
+        int movesCounter = 0;
 
-        while (true) {
+        field.showField();
 
-            move(player1);
-
-            if (field.isGameOver()) {
+        while (true) {  //todo убрать повторяющийся код
+            player1Move = player1.makeMove();
+            field.setMoveOnBoard(player1Move);
+            field.showField();
+            movesCounter++;
+            if (field.isWon(player1Move)) {
                 winner = player1;
+                System.out.println("\nCongratulations, " + winner.getName() + "! You`re win!");
+                break;
+            } else if (movesCounter == 9) {
+                System.out.println("DRAW!!!");
                 break;
             }
 
-            move(player2);
 
-            if (field.isGameOver()) {
+            player2Move = player2.makeMove();
+            field.setMoveOnBoard(player2Move);
+            field.showField();
+            movesCounter++;
+            if (field.isWon(player2Move)) {
                 winner = player2;
+                System.out.println("\nCongratulations, " + winner.getName() + "! You`re win!");
                 break;
             }
 
         }
-
-        System.out.println("Congratulations, " + winner.getName() + "! You`re win!");
-
     }
-
-    private void move(Playable player) throws IOException {
-        field.setMoveOnBoard(player.makeMove(), player.getMoveType());
-        field.showField();
-
-    }
-
 
 }

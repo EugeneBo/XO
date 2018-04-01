@@ -2,7 +2,7 @@ package entity;
 
 import java.io.IOException;
 
-public class PlayerAi implements Playable {
+public class PlayerAi implements Playable { //todo for future realization
 
     private String name;
     private int moveType;
@@ -20,8 +20,8 @@ public class PlayerAi implements Playable {
     }
 
     @Override
-    public int getMoveType() {
-        return 0;
+    public String getName() {
+        return null;
     }
 
 

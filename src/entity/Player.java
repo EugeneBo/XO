@@ -18,15 +18,9 @@ public class Player implements Playable {
         this.moveType = moveType;
     }
 
-
-    public int getMoveType() {
-        return moveType;
-    }
-
     public String getName() {
         return name;
     }
-
 
     @Override
     public Move makeMove() throws IOException {
