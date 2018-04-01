@@ -21,20 +21,35 @@ public class Game {
 
     public void startGame() throws IOException {
         field.showField();
-while (true) {
-    field.setMoveOnBoard(player1.makeMove(), player1.getMoveType());
-    field.isGameOver();
-    field.showField();
+        final Playable winner;
 
-    field.setMoveOnBoard(player2.makeMove(), player2.getMoveType());
-    field.isGameOver();
-    field.showField();
-}
+        while (true) {
+
+            move(player1);
+
+            if (field.isGameOver()) {
+                winner = player1;
+                break;
+            }
+
+            move(player2);
+
+            if (field.isGameOver()) {
+                winner = player2;
+                break;
+            }
+
+        }
+
+        System.out.println("Congratulations, " + winner.getName() + "! You`re win!");
+
     }
 
+    private void move(Playable player) throws IOException {
+        field.setMoveOnBoard(player.makeMove(), player.getMoveType());
+        field.showField();
 
-
-
+    }
 
 
 }

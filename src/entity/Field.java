@@ -6,7 +6,6 @@ public class Field {
 
     public Field(int fieldSize) {
         this.arrayOfFieldCells = new int[fieldSize][fieldSize];
-
     }
 
     public void setMoveOnBoard(Move move, int typeOfMove) { //записывает ход совершенный игроком в Field

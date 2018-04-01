@@ -7,6 +7,9 @@ import java.io.InputStreamReader;
 public class Player implements Playable {
 
     private final String name;
+
+
+
     private final int moveType;
     private final BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
@@ -19,6 +22,11 @@ public class Player implements Playable {
     public int getMoveType() {
         return moveType;
     }
+
+    public String getName() {
+        return name;
+    }
+
 
     @Override
     public Move makeMove() throws IOException {
